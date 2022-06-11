@@ -15,7 +15,8 @@ func routes(_ app: Application) throws {
 
     func fibo(_ i: Int = 100) -> String {
         var result = ""
-        var m,n = 1
+        var m = 1
+        var n = 1
         for num in 1...i {
             if num == 1 { 
                 result += " \(m)" 

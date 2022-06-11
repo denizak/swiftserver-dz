@@ -13,23 +13,21 @@ func routes(_ app: Application) throws {
         fibo()
     }
 
-    func fibo(_ i: Int = 100) -> String {
-        var result = ""
+    func fibo() -> String {
+        var results: [Int] = []
         var m = 1
         var n = 1
-        for num in 1...i {
+        for num in 1...30 {
             if num == 1 { 
-                result += " \(m)" 
+                results.append(m)
             } else if num == 2 {
-                result += " \(n)"
+                results.append(n)
             } else {
-                let o = m + n
-                result += " \(o)"
-                m = n
-                n = o
+                (m,n) = (n, m + n)
+                results.append(n)
             }
         }
 
-        return result
+        return results.reduce("") { "\($0) " + "\($1)" }
     }
 }

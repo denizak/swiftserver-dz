@@ -2,10 +2,10 @@ import Vapor
 
 func routes(_ app: Application) throws {
     app.get { req in
-        return "It works!"
+        return "develop in 🇩🇪"
     }
 
-    app.get("hello") { req -> String in
-        return "Hello, world!"
+    app.get("hallo") { req -> String in
+        return "Hallo!!"
     }
 }

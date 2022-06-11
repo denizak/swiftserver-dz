@@ -26,7 +26,7 @@ func routes(_ app: Application) throws {
                 let o = m + n
                 result += " \(o)"
                 m = n
-                n = 0
+                n = o
             }
         }
 

@@ -9,15 +9,17 @@ func routes(_ app: Application) throws {
         return "Hallo!!"
     }
 
-    app.get("fibo") { req -> String in
-        fibo()
+    app.get("fibo", ":index") { req -> String in
+        let index = req.parameters.get("index")!
+        let indexInt = Int(index) ?? 1
+        return fibo(until: indexInt)
     }
 
-    func fibo() -> String {
+    func fibo(until index: Int) -> String {
         var results: [Int] = []
         var m = 1
         var n = 1
-        for num in 1...30 {
+        for num in 1...index {
             if num == 1 { 
                 results.append(m)
             } else if num == 2 {
